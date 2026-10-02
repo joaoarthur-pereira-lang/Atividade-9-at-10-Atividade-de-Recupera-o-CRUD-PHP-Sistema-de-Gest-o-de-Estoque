@@ -65,3 +65,21 @@ if (!$produto) {
             value="<?php echo $produto["nome"]; ?>"
             required
         >
+
+        <label>Categoria:</label>
+
+        <input
+            type="text"
+            name="categoria"
+            value="<?php echo $produto["categoria"]; ?>"
+            required
+        >
+
+        <label>Descrição:</label>
+
+        <input
+            type="text"
+            name="descricao"
+            value="<?php echo $produto["descricao"]; ?>"
+            required
+        >
