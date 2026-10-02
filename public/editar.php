@@ -103,3 +103,26 @@ if (!$produto) {
             value="<?php echo $produto["quantidade"]; ?>"
             required
         >
+
+        <label>Data de validade:</label>
+
+        <input
+            type="date"
+            name="data_validade"
+            value="<?php echo $produto["data_validade"]; ?>"
+            required
+        >
+
+        <button type="submit">
+            Salvar alterações
+        </button>
+
+    </form>
+
+    <a class="voltar" href="index.php">
+        ← Voltar
+    </a>
+
+</body>
+
+</html>
