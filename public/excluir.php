@@ -15,3 +15,18 @@ $stmt = $conn->prepare($sql);
 if (!$stmt) {
     die("Erro ao preparar exclusão: " . $conn->error);
 }
+
+$stmt->bind_param("i", $id);
+
+if ($stmt->execute()) {
+
+    header("Location: index.php");
+    exit;
+
+} else {
+
+    echo "Erro ao excluir produto: " . $stmt->error;
+
+}
+
+?>
