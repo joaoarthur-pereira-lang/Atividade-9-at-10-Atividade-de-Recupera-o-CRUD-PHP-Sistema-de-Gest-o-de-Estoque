@@ -68,4 +68,4 @@ $resultado = $stmt->get_result();
 
 
     </tr>
-<?php } ?>
+<?php }
