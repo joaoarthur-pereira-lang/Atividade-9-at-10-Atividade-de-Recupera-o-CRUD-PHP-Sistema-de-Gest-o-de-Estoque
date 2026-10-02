@@ -68,3 +68,28 @@ $resultado = $stmt->get_result();
                     echo date("d/m/Y", strtotime($produto["data_validade"]));
                     ?>
                 </td>
+
+                <td>
+
+                    <a class="editar"
+                       href="editar.php?id=<?php echo $produto["id"]; ?>">
+                        Editar
+                    </a>
+
+                    <a class="excluir"
+                       href="excluir.php?id=<?php echo $produto["id"]; ?>"
+                       onclick="return confirm('Deseja excluir este produto?');">
+                        Excluir
+                    </a>
+
+                </td>
+
+            </tr>
+
+        <?php } ?>
+
+    </table>
+
+</body>
+
+</html>
