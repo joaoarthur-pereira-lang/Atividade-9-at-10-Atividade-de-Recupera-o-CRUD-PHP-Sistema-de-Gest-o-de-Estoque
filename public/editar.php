@@ -83,3 +83,23 @@ if (!$produto) {
             value="<?php echo $produto["descricao"]; ?>"
             required
         >
+         <label>Preço:</label>
+
+        <input
+            type="number"
+            name="preco"
+            step="0.01"
+            min="0"
+            value="<?php echo $produto["preco"]; ?>"
+            required
+        >
+
+        <label>Quantidade em estoque:</label>
+
+        <input
+            type="number"
+            name="quantidade"
+            min="0"
+            value="<?php echo $produto["quantidade"]; ?>"
+            required
+        >
