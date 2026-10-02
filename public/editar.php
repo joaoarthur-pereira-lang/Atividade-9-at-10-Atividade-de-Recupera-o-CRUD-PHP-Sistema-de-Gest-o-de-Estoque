@@ -31,3 +31,37 @@ if (!$produto) {
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Editar Produto</title>
+
+    <link rel="stylesheet" href="../style/style.css">
+
+</head>
+
+<body>
+
+    <h1>✏️ Editar Produto</h1>
+
+    <form action="atualizar.php" method="POST">
+
+        <input
+            type="hidden"
+            name="id"
+            value="<?php echo $produto["id"]; ?>"
+        >
+
+        <label>Nome:</label>
+
+        <input
+            type="text"
+            name="nome"
+            value="<?php echo $produto["nome"]; ?>"
+            required
+        >
