@@ -39,3 +39,16 @@ $stmt->bind_param(
     $quantidade,
     $data_validade
 );
+
+if ($stmt->execute()) {
+
+    header("Location: index.php");
+    exit;
+
+} else {
+
+    echo "Erro ao cadastrar produto: " . $stmt->error;
+
+}
+
+?>
