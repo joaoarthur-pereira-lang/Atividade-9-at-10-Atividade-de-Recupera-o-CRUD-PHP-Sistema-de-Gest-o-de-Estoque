@@ -25,3 +25,32 @@ header p {
     margin: 8px 0 0;
     font-size: 15px;
 }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+
+h1 {
+    color: #198754;
+    margin-bottom: 25px;
+}
+
+
+.botao {
+    display: inline-block;
+    background: #ffc107;
+    color: #333;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 3px 6px #ccc;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    background: #e0a800;
+    transform: translateY(-2px);
+}
