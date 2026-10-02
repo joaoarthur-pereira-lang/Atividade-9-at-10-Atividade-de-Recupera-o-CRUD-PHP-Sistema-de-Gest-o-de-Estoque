@@ -66,3 +66,17 @@
             name="data_validade"
             required
         >
+
+        <button type="submit">
+            Cadastrar
+        </button>
+
+    </form>
+
+    <a class="voltar" href="index.php">
+        ← Voltar
+    </a>
+
+</body>
+
+</html>
