@@ -41,7 +41,7 @@ if (!$produto) {
 
     <title>Editar Produto</title>
 
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -104,25 +104,4 @@ if (!$produto) {
             required
         >
 
-        <label>Data de validade:</label>
-
-        <input
-            type="date"
-            name="data_validade"
-            value="<?php echo $produto["data_validade"]; ?>"
-            required
-        >
-
-        <button type="submit">
-            Salvar alterações
-        </button>
-
-    </form>
-
-    <a class="voltar" href="index.php">
-        ← Voltar
-    </a>
-
-</body>
-
-</html>
+        
