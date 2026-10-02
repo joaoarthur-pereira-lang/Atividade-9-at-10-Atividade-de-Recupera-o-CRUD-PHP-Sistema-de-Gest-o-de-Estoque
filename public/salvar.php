@@ -20,3 +20,22 @@ if ($preco < 0) {
 if ($quantidade < 0) {
     die("A quantidade não pode ser negativa.");
 }
+$sql = "INSERT INTO produtos
+        (nome, categoria, descricao, preco, quantidade, data_validade)
+        VALUES (?, ?, ?, ?, ?, ?)";
+
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    die("Erro ao preparar cadastro: " . $conn->error);
+}
+
+$stmt->bind_param(
+    "sssdis",
+    $nome,
+    $categoria,
+    $descricao,
+    $preco,
+    $quantidade,
+    $data_validade
+);
