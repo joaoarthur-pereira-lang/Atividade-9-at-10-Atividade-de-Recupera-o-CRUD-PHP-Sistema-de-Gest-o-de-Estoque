@@ -21,3 +21,18 @@ if ($preco < 0) {
 if ($quantidade < 0) {
     die("A quantidade não pode ser negativa.");
 }
+
+$sql = "UPDATE produtos SET
+        nome = ?,
+        categoria = ?,
+        descricao = ?,
+        preco = ?,
+        quantidade = ?,
+        data_validade = ?
+        WHERE id = ?";
+
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+    die("Erro ao preparar atualização: " . $conn->error);
+}

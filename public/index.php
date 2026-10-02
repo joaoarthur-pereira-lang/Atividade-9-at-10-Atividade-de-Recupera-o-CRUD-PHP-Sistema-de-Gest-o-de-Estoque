@@ -5,67 +5,100 @@ include "../infra/conexao.php";
 $sql = "SELECT id, nome, categoria, descricao, preco, quantidade, data_validade FROM produtos";
 
 $stmt = $conn->prepare($sql);
-
-if (!$stmt) {
-    die("Erro ao preparar consulta: " . $conn->error);
-}
-
 $stmt->execute();
 
 $resultado = $stmt->get_result();
 
 ?>
 
-<?php
+<!DOCTYPE html>
+<html lang="pt-br">
 
-include "../infra/conexao.php";
+<head>
+    <meta charset="UTF-8">
+    <title>Estoque do Mercado</title>
 
-$sql = "SELECT id, nome, categoria, descricao, preco, quantidade, data_validade FROM produtos";
+    <link rel="stylesheet" href="style.css">
+</head>
 
-$stmt = $conn->prepare($sql);
+<body>
 
-if (!$stmt) {
-    die("Erro ao preparar consulta: " . $conn->error);
-}
+    <div class="container">
 
-$stmt->execute();
+        <h1>🛒 Estoque do Mercado</h1>
 
-$resultado = $stmt->get_result();
+        <a class="botao" href="cadastrar.php">Cadastrar Produto</a>
 
-?>
+        <br><br>
 
-<?php while ($produto = $resultado->fetch_assoc()) { ?>
-    <tr>
+        <table>
 
-        <td>
-            <?php echo $produto["id"]; ?>
-        </td>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Validade</th>
+                <th>Ações</th>
+            </tr>
 
-        <td>
-            <?php echo $produto["nome"]; ?>
-        </td>
+            <?php while ($produto = $resultado->fetch_assoc()) { ?>
 
-        <td>
-            <?php echo $produto["categoria"]; ?>
-        </td>
+                <tr>
 
-        <td>
-            <?php echo $produto["descricao"]; ?>
-        </td>
+                    <td>
+                        <?php echo $produto["id"]; ?>
+                    </td>
 
-        <td>
-            R$
-            <?php echo number_format($produto["preco"], 2, ",", "."); ?>
-        </td>
+                    <td>
+                        <?php echo $produto["nome"]; ?>
+                    </td>
 
-        <td>
-            <?php echo $produto["quantidade"]; ?>
-        </td>
+                    <td>
+                        <?php echo $produto["categoria"]; ?>
+                    </td>
 
-        <td>
-            <?php echo date("d/m/Y", strtotime($produto["data_validade"])); ?>
-        </td>
+                    <td>
+                        <?php echo $produto["descricao"]; ?>
+                    </td>
 
+                    <td>
+                        R$ <?php echo number_format($produto["preco"], 2, ",", "."); ?>
+                    </td>
 
-    </tr>
-<?php }
+                    <td>
+                        <?php echo $produto["quantidade"]; ?>
+                    </td>
+
+                    <td>
+                        <?php echo $produto["data_validade"]; ?>
+                    </td>
+
+                    <td>
+
+                        <a href="editar.php?id=<?php echo $produto["id"]; ?>">
+                            Editar
+                        </a>
+
+                        |
+
+                        <a href="excluir.php?id=<?php echo $produto["id"]; ?>"
+                           onclick="return confirm('Deseja excluir este produto?')">
+                            Excluir
+                        </a>
+
+                    </td>
+
+                </tr>
+
+            <?php } ?>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
