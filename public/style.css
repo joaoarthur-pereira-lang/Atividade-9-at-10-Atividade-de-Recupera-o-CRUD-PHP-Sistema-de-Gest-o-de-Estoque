@@ -54,3 +54,30 @@ h1 {
     background: #e0a800;
     transform: translateY(-2px);
 }
+
+table {
+    width: 100%;
+    margin-top: 25px;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #d5d5d5;
+}
+
+th {
+    background: #198754;
+    color: white;
+    padding: 15px 10px;
+    font-size: 14px;
+}
+
+td {
+    padding: 13px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #f1f8f3;
+}
