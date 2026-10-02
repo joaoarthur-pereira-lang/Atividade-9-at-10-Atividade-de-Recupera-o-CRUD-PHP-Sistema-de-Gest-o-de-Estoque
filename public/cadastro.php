@@ -32,3 +32,37 @@
             name="categoria"
             required
         >
+        <label>Descrição:</label>
+
+        <input
+            type="text"
+            name="descricao"
+            required
+        >
+
+        <label>Preço:</label>
+
+        <input
+            type="number"
+            name="preco"
+            step="0.01"
+            min="0"
+            required
+        >
+
+        <label>Quantidade em estoque:</label>
+
+        <input
+            type="number"
+            name="quantidade"
+            min="0"
+            required
+        >
+
+        <label>Data de validade:</label>
+
+        <input
+            type="date"
+            name="data_validade"
+            required
+        >
