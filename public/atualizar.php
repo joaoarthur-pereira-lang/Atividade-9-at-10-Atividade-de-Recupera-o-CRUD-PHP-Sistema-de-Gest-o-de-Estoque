@@ -8,9 +8,14 @@ $categoria = $_POST["categoria"];
 $descricao = $_POST["descricao"];
 $preco = $_POST["preco"];
 $quantidade = $_POST["quantidade"];
-$data_validade = $_POST["data_validade"];
+$validade = $_POST["validade"];
 
-if ($nome == "" || $categoria == "" || $descricao == "" || $data_validade == "") {
+if (
+    $nome == "" ||
+    $categoria == "" ||
+    $descricao == "" ||
+    $validade == ""
+) {
     die("Preencha todos os campos.");
 }
 
@@ -28,7 +33,7 @@ $sql = "UPDATE produtos SET
         descricao = ?,
         preco = ?,
         quantidade = ?,
-        data_validade = ?
+        validade = ?
         WHERE id = ?";
 
 $stmt = $conn->prepare($sql);
@@ -44,19 +49,15 @@ $stmt->bind_param(
     $descricao,
     $preco,
     $quantidade,
-    $data_validade,
+    $validade,
     $id
 );
 
 if ($stmt->execute()) {
-
     header("Location: index.php");
     exit;
-
 } else {
-
     echo "Erro ao atualizar produto: " . $stmt->error;
-
 }
 
 ?>

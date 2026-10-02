@@ -2,7 +2,7 @@
 
 include "../infra/conexao.php";
 
-$sql = "SELECT id, nome, categoria, descricao, preco, quantidade, data_validade FROM produtos";
+$sql = "SELECT id, nome, categoria, descricao, preco, quantidade, validade FROM produtos";
 
 $stmt = $conn->prepare($sql);
 $stmt->execute();

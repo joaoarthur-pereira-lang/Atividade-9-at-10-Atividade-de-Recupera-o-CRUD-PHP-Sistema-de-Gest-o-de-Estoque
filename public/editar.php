@@ -51,57 +51,79 @@ if (!$produto) {
 
     <form action="atualizar.php" method="POST">
 
-        <input
-            type="hidden"
-            name="id"
+        <input 
+            type="hidden" 
+            name="id" 
             value="<?php echo $produto["id"]; ?>"
         >
 
         <label>Nome:</label>
 
-        <input
-            type="text"
-            name="nome"
-            value="<?php echo $produto["nome"]; ?>"
+        <input 
+            type="text" 
+            name="nome" 
+            value="<?php echo $produto["nome"]; ?>" 
             required
         >
 
         <label>Categoria:</label>
 
-        <input
-            type="text"
-            name="categoria"
-            value="<?php echo $produto["categoria"]; ?>"
+        <input 
+            type="text" 
+            name="categoria" 
+            value="<?php echo $produto["categoria"]; ?>" 
             required
         >
 
         <label>Descrição:</label>
 
-        <input
-            type="text"
-            name="descricao"
-            value="<?php echo $produto["descricao"]; ?>"
+        <input 
+            type="text" 
+            name="descricao" 
+            value="<?php echo $produto["descricao"]; ?>" 
             required
         >
-         <label>Preço:</label>
 
-        <input
-            type="number"
-            name="preco"
-            step="0.01"
-            min="0"
-            value="<?php echo $produto["preco"]; ?>"
+        <label>Preço:</label>
+
+        <input 
+            type="number" 
+            name="preco" 
+            step="0.01" 
+            min="0" 
+            value="<?php echo $produto["preco"]; ?>" 
             required
         >
 
         <label>Quantidade em estoque:</label>
 
-        <input
-            type="number"
-            name="quantidade"
-            min="0"
-            value="<?php echo $produto["quantidade"]; ?>"
+        <input 
+            type="number" 
+            name="quantidade" 
+            min="0" 
+            value="<?php echo $produto["quantidade"]; ?>" 
             required
         >
 
-        
+        <label>Data de validade:</label>
+
+        <input 
+            type="date" 
+            name="data_validade" 
+            value="<?php echo $produto["data_validade"]; ?>" 
+            required
+        >
+
+        <button type="submit">
+            💾 Salvar Alterações
+        </button>
+
+    </form>
+
+    <a class="voltar" href="index.php">
+        ← Voltar
+    </a>
+
+</body>
+
+</html>
