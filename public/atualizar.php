@@ -36,3 +36,27 @@ $stmt = $conn->prepare($sql);
 if (!$stmt) {
     die("Erro ao preparar atualização: " . $conn->error);
 }
+
+$stmt->bind_param(
+    "sssdisi",
+    $nome,
+    $categoria,
+    $descricao,
+    $preco,
+    $quantidade,
+    $data_validade,
+    $id
+);
+
+if ($stmt->execute()) {
+
+    header("Location: index.php");
+    exit;
+
+} else {
+
+    echo "Erro ao atualizar produto: " . $stmt->error;
+
+}
+
+?>
