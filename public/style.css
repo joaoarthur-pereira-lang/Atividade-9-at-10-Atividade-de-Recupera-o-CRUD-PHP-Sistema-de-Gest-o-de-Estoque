@@ -9,3 +9,19 @@ body {
     background: #f3f7f2;
     color: #333;
 }
+header {
+    background: #198754;
+    color: white;
+    padding: 25px 40px;
+    box-shadow: 0 3px 10px #bbb;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: 15px;
+}
